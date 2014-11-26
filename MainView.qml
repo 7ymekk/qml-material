@@ -103,6 +103,10 @@ Item {
                 anchors.fill: parent
                 onClicked: drawer.close()
             }
+
+            Behavior on opacity {
+                NumberAnimation { duration: 200 }
+            }
         }
     }
 
