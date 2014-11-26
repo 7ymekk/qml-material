@@ -65,7 +65,7 @@ Item {
 
         currentPage = page
 
-        if (!page.transition)
+//        if (!page.transition) //FIXME the first animation works, but the next one doesn't. Without this line it works
             page.transition = Utils.newObject(Qt.resolvedUrl('Transitions/PageTransition.qml'))
 
         if (caller)
