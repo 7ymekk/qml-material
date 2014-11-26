@@ -25,6 +25,7 @@ View {
     radius: units.dp(2)
 
     property bool raised
+    property alias icon: imageObject.source
 
     property string text
     property color textColor: style == 'default' ? theme.blackColor("text") : theme.styleColor(style)
@@ -37,19 +38,37 @@ View {
         id: mouseArea
         anchors.fill: parent
         onClicked: {
-            mouseArea.focused = true
             button.triggered()
         }
     }
 
-    Label {
-        id: label
-
+    Column
+    {
         anchors.centerIn: parent
-        text: button.text.toUpperCase()
 
-        color: button.textColor
+        Image
+        {
+            id:imageObject
+            visible: (source + "").length == 0 ? false : true
+            anchors.horizontalCenter: parent.horizontalCenter
 
-        style: "button"
+            sourceSize.width: height
+            sourceSize.height: height
+
+            height: visible ? (button.height * 0.6) : 0
+            width: height
+        }
+
+        Label
+        {
+            id: label
+
+            anchors.horizontalCenter: parent.horizontalCenter
+            text: button.text.toUpperCase()
+
+            color: button.textColor
+
+            style: "button"
+        }
     }
 }
