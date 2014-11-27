@@ -16,14 +16,14 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 import QtQuick 2.0
-import "../qml-extras/utils.js" as Utils
+import "qml-extras/utils.js" as Utils
 
 Item {
     id: pageStack
     clip: true
 
     property var stack: []
-    property Page currentPage
+    property var/*Page*/ currentPage
     property var currentTabs: currentPage && currentPage.hasOwnProperty("tabs") ? currentPage.tabs : []
 
     property int count: stack.length

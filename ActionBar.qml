@@ -84,6 +84,8 @@ Item {
         text: showContents ? page.title : ""
         style: "title"
         color: actionBar.color
+
+        font.capitalization: Font.Capitalize
     }
 
     Row {
