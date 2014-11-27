@@ -39,7 +39,7 @@ View {
     backgroundColor: "white"
     elevation: 3
 
-    property bool showing
+    property bool showing: false
 
     function open() {
         showing = true
