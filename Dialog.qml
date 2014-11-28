@@ -19,6 +19,7 @@ import QtQuick 2.2
 import QtQuick.Window 2.2
 
 View {
+    id: dialog
     width: 270
     height: 300
     elevation: 5
@@ -27,6 +28,9 @@ View {
 
     z: 99999999
     clipContent: false
+
+    signal accepted();
+    signal rejected();
 
     MouseArea
     {
@@ -57,6 +61,12 @@ View {
         }
 
         text: "CANCEL"
+
+        onTriggered:
+        {
+            rejected()
+            dialog.visible = false;
+        }
     }
 
     Button {
@@ -70,5 +80,11 @@ View {
 
         style: "primary"
         text: "ACCEPT"
+
+        onTriggered:
+        {
+            accepted()
+            dialog.visible = false;
+        }
     }
 }
