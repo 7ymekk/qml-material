@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import ".."
+import Material 0.1 //Android had problem with '..'
 
 View {
     id: listItem

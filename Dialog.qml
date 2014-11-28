@@ -16,6 +16,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 import QtQuick 2.2
+import QtQuick.Window 2.2
 
 View {
     width: 270
@@ -23,6 +24,17 @@ View {
     elevation: 5
 
     property string title
+
+    z: 99999999
+    clipContent: false
+
+    MouseArea
+    {
+        x: -parent.width
+        y: -parent.height
+        height: Screen.height
+        width: Screen.width
+    }
 
     Label {
         text: title
