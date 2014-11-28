@@ -43,8 +43,8 @@ Object {
 
     function colorize(color, alpha) {
         temp = color
-        print(temp.r,temp.g,temp.b,alpha)
-        print(Qt.rgba(temp.r,temp.g,temp.b,alpha))
+//        print(temp.r,temp.g,temp.b,alpha)
+//        print(Qt.rgba(temp.r,temp.g,temp.b,alpha))
         return Qt.rgba(temp.r,temp.g,temp.b,alpha)
     }
 

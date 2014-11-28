@@ -29,6 +29,7 @@ View {
     z: 99999999
     clipContent: false
 
+    opacity: 0
     visible: opacity !=0
 
     signal accepted();
@@ -53,12 +54,22 @@ View {
         NumberAnimation { duration: 200 }
     }
 
-    MouseArea
-    {
+    Rectangle {
+        id: overlay
+
         x: - Screen.height
         y: - Screen.width
         height: Screen.height * 3
         width: Screen.width * 3
+
+        color: "black"
+        opacity: dialog.opacity * 0.4
+
+        z: -1
+
+        MouseArea {
+            anchors.fill: parent
+        }
     }
 
     Label {

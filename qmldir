@@ -29,3 +29,4 @@ ThinDivider 0.1 ThinDivider.qml
 Toolbar 0.1 Toolbar.qml
 View 0.1 View.qml
 Wave 0.1 Wave.qml
+ChoiceDialog 0.1 ChoiceDialog.qml
