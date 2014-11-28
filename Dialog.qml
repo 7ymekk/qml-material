@@ -29,8 +29,29 @@ View {
     z: 99999999
     clipContent: false
 
+    visible: opacity !=0
+
     signal accepted();
     signal rejected();
+
+    function show()
+    {
+        opacity = 1;
+    }
+
+    function close()
+    {
+        hide()
+    }
+
+    function hide()
+    {
+        opacity = 0;
+    }
+
+    Behavior on opacity {
+        NumberAnimation { duration: 200 }
+    }
 
     MouseArea
     {
@@ -65,7 +86,7 @@ View {
         onTriggered:
         {
             rejected()
-            dialog.visible = false;
+            dialog.hide()
         }
     }
 
@@ -84,7 +105,7 @@ View {
         onTriggered:
         {
             accepted()
-            dialog.visible = false;
+            dialog.hide()
         }
     }
 }
