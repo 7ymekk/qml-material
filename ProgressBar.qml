@@ -31,7 +31,7 @@ Item {
 
     Rectangle {
         radius: units.dp(2)
-        color: theme.secondary
+        color: theme.primary
         opacity: 0.2
 
         anchors.fill: parent
@@ -43,6 +43,6 @@ Item {
         radius: units.dp(2)
         height: parent.height
         width: parent.width * progress
-        color: theme.secondary
+        color: theme.primary
     }
 }
