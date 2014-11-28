@@ -4,6 +4,9 @@ import ListItems 0.1
 
 Dialog
 {
+    id: dialog
+    property var value: null
+
     /**
       choices - json object array
 
@@ -17,30 +20,36 @@ Dialog
         {
             var jsonObject = choices[i];
             choicesModel.append(jsonObject)
-            if (currentValue === jsonObject.value)
+            if (currentValue == jsonObject.value)
+            {
+                dialog.value = currentValue
                 listView.currentIndex = i
+            }
         }
 
         opacity = 1;
     }
 
-    ListView
-    {
+    dialogContent: ListView {
         id: listView
 
-        anchors.centerIn: parent
+        anchors.fill: parent
         clip: true
-
-        height: parent.height * 2 / 3
-        width: parent.width
 
         model: ListModel{ id: choicesModel }
 
         delegate: Subtitled{
+
             property var isCurrent: ListView.isCurrentItem
+            text: label
+
+            onTriggered:
+            {
+                dialog.value = value
+                listView.currentIndex = index
+            }
 
             action: Item {
-
                 anchors.fill: parent
                 Rectangle
                 {
@@ -78,9 +87,6 @@ Dialog
                     }
                 }
             }
-            text: label
-
-            onTriggered: listView.currentIndex = index
         }
 
         Rectangle

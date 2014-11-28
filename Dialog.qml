@@ -25,6 +25,7 @@ View {
     elevation: 5
 
     property string title
+    property alias dialogContent: contentItem.data
 
     z: 99999999
     clipContent: false
@@ -73,6 +74,7 @@ View {
     }
 
     Label {
+        id: titleItem
         text: title
 
         style: "title"
@@ -85,7 +87,21 @@ View {
         }
     }
 
+    Item
+    {
+        id: contentItem
+
+        anchors
+        {
+            top: titleItem.bottom
+            bottom: cancelButton.top
+            left: parent.left
+            right: parent.right
+        }
+    }
+
     Button {
+        id: cancelButton
         anchors {
             right: acceptButton.left
             bottom: parent.bottom
