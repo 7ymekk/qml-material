@@ -30,10 +30,10 @@ View {
 
     MouseArea
     {
-        x: -parent.width
-        y: -parent.height
-        height: Screen.height
-        width: Screen.width
+        x: - Screen.height
+        y: - Screen.width
+        height: Screen.height * 3
+        width: Screen.width * 3
     }
 
     Label {
