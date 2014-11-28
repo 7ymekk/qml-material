@@ -70,12 +70,15 @@ View {
 
         MouseArea {
             anchors.fill: parent
+            hoverEnabled: true
         }
     }
 
     Label {
         id: titleItem
         text: title
+
+        font.capitalization: Font.Capitalize
 
         style: "title"
 
