@@ -65,8 +65,8 @@ View {
         {
             id: label
 
-        anchors.centerIn: parent
-        text: button.text.toUpperCase()
+            anchors.horizontalCenter: parent.horizontalCenter
+            font.capitalization: Font.Capitalize
 
             color: button.textColor
 

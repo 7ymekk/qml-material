@@ -64,7 +64,7 @@ Dialog
                     border
                     {
                         width: units.dp(2)
-                        color: theme.primary
+                        color: Theme.primaryColor
                     }
 
                     Behavior on opacity{
@@ -77,7 +77,7 @@ Dialog
                         height: parent.height / 2
                         width: height
                         radius: width/2
-                        color: theme.primary
+                        color: Theme.primaryColor
 
                         scale: isCurrent ? 1 : 0
 
@@ -89,17 +89,14 @@ Dialog
             }
         }
 
-        Rectangle
+        ThinDivider
         {
-            height: units.dp(1)
             anchors
             {
                 left: parent.left
                 right: parent.right
                 bottom: parent.bottom
             }
-
-            color: theme.blackColor("divider")
         }
     }
 }

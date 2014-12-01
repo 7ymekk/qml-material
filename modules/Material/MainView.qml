@@ -18,21 +18,24 @@
 import QtQuick 2.0
 import QtQuick.Window 2.0
 
+import Material 0.1
+
 Item {
     id: app
 
     //opacity: 0.5
 
-    width: units.gu(120)
-    height: units.gu(80)
+    width: units.dp(120)
+    height: units.dp(80)
 
     default property alias content: contents.data
 
-    property alias theme: __theme
-
-    Theme {
-        id: __theme
-    }
+//Composite Singleton Type Theme is not creatable.
+//    property alias theme: __theme
+//
+//    Theme {
+//        id: __theme
+//    }
 
     property alias units: __units
 
@@ -89,7 +92,7 @@ Item {
             bottom: parent.bottom
         }
 
-        color: theme.defaultBackground
+        color: Theme.backgroundColor
 
         Rectangle {
             id: overlay
