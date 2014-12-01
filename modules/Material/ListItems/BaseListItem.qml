@@ -12,6 +12,7 @@ View {
 
     property int dividerInset: 0
     property bool showDivider: false
+    property alias interactive: ink.enabled
 
     signal triggered()
 
