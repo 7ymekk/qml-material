@@ -91,6 +91,9 @@ Object {
     function lightDark(background, lightColor, darkColor) {
         var temp = Qt.darker(background, 1)
 
+        if (temp.a == 0) //transparent
+            temp = backgroundColor;
+
         var a = 1 - ( 0.299 * temp.r + 0.587 * temp.g + 0.114 * temp.b);
 
         if (a < 0.3)

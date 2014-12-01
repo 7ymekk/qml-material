@@ -43,7 +43,7 @@ Rectangle {
 
     anchors.fill: parent
 
-    property bool currentPage: pageStack.currentPage == page
+    property bool currentPage: pageStack != null ? pageStack.currentPage == page : null  //if dynamically created then pageStack=null on init
 
     property bool dynamic: false
 

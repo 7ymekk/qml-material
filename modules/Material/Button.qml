@@ -28,7 +28,7 @@ View {
     property bool raised
     property alias icon: imageObject.source
 
-    property string text
+    property alias text: label.text
     property color textColor: Theme.lightDark(backgroundColor, Theme.light.textColor,
                                                                   Theme.dark.textColor)
 
