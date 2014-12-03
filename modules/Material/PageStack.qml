@@ -65,7 +65,10 @@ Item {
 
         currentPage = page
 
-        if (!page.transition)
+        if (page.transition)
+            page.transition.destroy(300)
+
+//        if (!page.transition)
             page.transition = Utils.newObject(Qt.resolvedUrl('Transitions/PageTransition.qml'), {pageStack: pageStack}, pageStack)
 
         if (caller)
