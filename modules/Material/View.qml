@@ -43,6 +43,8 @@ Item {
 
     property bool elevationInverted: false
 
+    property real shadowIntensity: 0.05 //[0-1] - RectangularGlow.spread
+
     property var topShadow: [
         {
             "opacity": 0,
@@ -128,9 +130,21 @@ Item {
         anchors.verticalCenterOffset: elevationInfo.offset * (elevationInverted ? -1 : 1)
         glowRadius: elevationInfo.blur
         opacity: elevationInfo.opacity
-        spread: 0.05
+        spread: shadowIntensity
         color: "black"
         cornerRadius: item.radius + glowRadius * 2.5
+
+        Behavior on anchors.verticalCenterOffset{
+            NumberAnimation { duration: 200 }
+        }
+
+        Behavior on glowRadius{
+            NumberAnimation { duration: 200 }
+        }
+
+        Behavior on spread{
+            NumberAnimation { duration: 200 }
+        }
     }
 
     RectangularGlow {
@@ -142,9 +156,21 @@ Item {
         anchors.verticalCenterOffset: elevationInfo.offset * (elevationInverted ? -1 : 1)
         glowRadius: elevationInfo.blur
         opacity: elevationInfo.opacity
-        spread: 0.05
+        spread: shadowIntensity
         color: "black"
         cornerRadius: item.radius + glowRadius * 2.5
+
+        Behavior on anchors.verticalCenterOffset{
+            NumberAnimation { duration: 200 }
+        }
+
+        Behavior on glowRadius{
+            NumberAnimation { duration: 300 }
+        }
+
+        Behavior on spread{
+            NumberAnimation { duration: 200 }
+        }
     }
 
     Rectangle {

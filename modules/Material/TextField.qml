@@ -16,10 +16,11 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 import QtQuick 2.0
+import Material 0.1
 
 Item {
 	property string placeholder
-	property color color: theme.primary
+	property color color: Theme.primaryColor
 	property string text: field.text
 	property TextInput input: field
 
@@ -54,8 +55,8 @@ Item {
 		width: parent.width
 		font.pixelSize: textField.height/4.5
 		y: (2*textField.height)/3
-		color: theme.blackColor('text')
-		font.family: theme.font.name
+//		color: theme.blackColor('text')
+//		font.family: theme.font.name
 	}
 
 	Label {
@@ -63,7 +64,7 @@ Item {
 		text: parent.placeholder
 		font.pixelSize: textField.height/4.5
 		y: field.y
-		font.family: theme.font.name
+//		font.family: theme.font.name
 	}
 
 	Rectangle {

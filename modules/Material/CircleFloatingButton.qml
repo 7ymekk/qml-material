@@ -7,16 +7,18 @@ View
     id: view
     property alias action: icon.action
 
-    height: units.dp(56) * 1.2
+    height: units.dp(56) * 1.4
     width: height
 
-    elevation: 2
+    elevation: mouseArea.containsMouse ? 3 : 2
     radius: width / 2
 
     clip: false
     clipContent: false
 
-    backgroundColor: Theme.primaryColor
+    backgroundColor: "#fafafa"
+
+    shadowIntensity: elevation == 2 ? 0.9 : 0.8
 
     signal triggered();
 
@@ -24,7 +26,7 @@ View
     {
         id: icon
 
-        color: "white"
+//        color: "white"
         anchors.centerIn: parent
 
         height: parent.height * 2 / 3
@@ -52,7 +54,7 @@ View
     State
     {
         when: mouseArea.containsMouse
-        PropertyChanges { target: view; backgroundColor:  Qt.darker(Theme.primaryColor, 1.1); }
+        PropertyChanges { target: view; backgroundColor:  Qt.lighter(Theme.backgroundColor, 1.05); }
     }]
 
     transitions: Transition {
