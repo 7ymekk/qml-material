@@ -7,7 +7,7 @@ View
     id: view
     property alias action: icon.action
 
-    height: units.dp(56) * 1.4
+    height: units.dp(56)
     width: height
 
     elevation: mouseArea.containsMouse ? 3 : 2

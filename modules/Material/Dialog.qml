@@ -18,6 +18,8 @@
 import QtQuick 2.2
 import QtQuick.Window 2.2
 
+import Material 0.1
+
 View {
     id: dialog
     width: 270
