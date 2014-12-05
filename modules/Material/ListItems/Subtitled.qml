@@ -68,8 +68,10 @@ BaseListItem {
 
                 font.capitalization: Font.Capitalize
 
-                width: valueLabel.text || secondaryItem.children.length > 0
-                       ? Math.min(implicitWidth, parent.width * 0.8) : parent.width
+                width: parent.width
+//property loop
+//                width: valueLabel.text || secondaryItem.children.length > 0
+//                       ? Math.min(implicitWidth, parent.width * 0.8) : parent.width
             }
 
             Label {
