@@ -10,8 +10,11 @@ View
     height: units.dp(56) * 1.2
     width: height
 
-    elevation: mouseArea.containsMouse ? 4 : 2
+    elevation: 2
     radius: width / 2
+
+    clip: false
+    clipContent: false
 
     backgroundColor: Theme.primaryColor
 
