@@ -33,3 +33,4 @@ singleton units 0.1 units.qml
 View 0.1 View.qml
 Wave 0.1 Wave.qml
 ChoiceDialog 0.1 ChoiceDialog.qml
+CircleFloatingButton 0.1 CircleFloatingButton.qml

@@ -32,6 +32,8 @@ View {
     property color textColor: Theme.lightDark(backgroundColor, Theme.light.textColor,
                                                                   Theme.dark.textColor)
 
+    property alias fontPixelSize: label.font.pixelSize
+
     signal triggered
 
     tintColor: mouseArea.pressed ? Qt.rgba(0,0,0, 0.1) : "transparent"

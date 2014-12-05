@@ -26,6 +26,8 @@ Image {
 
         if (name == "" || list[0] == "awesome")
             return ""
+        if (list[0] == "qrc:")
+            return name;
 
         var color = icon.color
 

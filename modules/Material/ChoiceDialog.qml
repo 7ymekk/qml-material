@@ -33,7 +33,11 @@ Dialog
     dialogContent: ListView {
         id: listView
 
-        anchors.fill: parent
+        anchors
+        {
+            fill: parent
+            margins: units.dp(8)
+        }
         clip: true
 
         model: ListModel{ id: choicesModel }
