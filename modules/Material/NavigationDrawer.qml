@@ -70,7 +70,7 @@ View {
             anchors.fill: parent
             hoverEnabled: showing
 
-            onClicked: { close() }
+            onClicked: close()
         }
 
         Behavior on opacity{
