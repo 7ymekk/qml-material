@@ -68,7 +68,7 @@ View {
         MouseArea {
             enabled: showing
             anchors.fill: parent
-            hoverEnabled: true
+            hoverEnabled: showing
 
             onClicked: { close() }
         }
