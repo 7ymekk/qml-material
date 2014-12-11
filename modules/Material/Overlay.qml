@@ -19,11 +19,11 @@ Rectangle
 
     signal clicked()
 
-    MouseArea 
-	{
+    MouseArea
+    {
         enabled: showing
         anchors.fill: parent
-        hoverEnabled: true
+        hoverEnabled: showing
 
         onClicked: overlay.clicked()
     }
