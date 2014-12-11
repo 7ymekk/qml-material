@@ -57,23 +57,10 @@ View {
         NumberAnimation { duration: 200 }
     }
 
-    Rectangle {
-        id: overlay
-
-        x: - Screen.height
-        y: - Screen.width
-        height: Screen.height * 3
-        width: Screen.width * 3
-
-        color: "black"
-        opacity: dialog.opacity * 0.4
-
-        z: -1
-
-        MouseArea {
-            anchors.fill: parent
-            hoverEnabled: true
-        }
+    Overlay
+    {
+        showing: dialog.visible
+        onClicked: close()
     }
 
     Label {

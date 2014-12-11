@@ -19,6 +19,7 @@ import QtQuick 2.0
 import QtQuick.Window 2.2
 
 View {
+    id: navigationDrawer
     width: units.dp(320)
     fullHeight: true
 
@@ -52,29 +53,9 @@ View {
         showing = false
     }
 
-    Rectangle {
-        id: overlay
-
-        x: - Screen.height
-        y: - Screen.width
-        height: Screen.height * 3
-        width: Screen.width * 3
-
-        color: "black"
-        opacity: showing ? 0.4 : 0
-
-        z: -1
-
-        MouseArea {
-            enabled: showing
-            anchors.fill: parent
-            hoverEnabled: showing
-
-            onClicked: close()
-        }
-
-        Behavior on opacity{
-            NumberAnimation { duration: 200 }
-        }
+    Overlay
+    {
+        showing: navigationDrawer.showing
+        onClicked: close()
     }
 }
