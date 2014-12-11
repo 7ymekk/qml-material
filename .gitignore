@@ -2,3 +2,5 @@
 .qmake.stash
 Makefile
 *.pro.user
+tests/tst_material
+*.o

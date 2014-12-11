@@ -58,7 +58,7 @@ Dialog
                 Rectangle
                 {
                     anchors.centerIn: parent
-                    height: parent.height * 2 / 3
+                    height: parent.height * 1 / 2
                     width: height
                     radius: width/2
                     color: "transparent"

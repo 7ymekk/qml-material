@@ -87,6 +87,7 @@ Window {
      */
     property real __pixelDensity: Screen.pixelDensity
 
+    property bool clientSideDecorations: false
 
     width: units.dp(800)
     height: units.dp(600)
@@ -116,8 +117,10 @@ Window {
 
         tabs: pageStack.currentPage.tabs
         expanded: pageStack.currentPage.cardStyle
-        
-	    onSelectedTabChanged: pageStack.currentPage.selectedTab = selectedTab 
+
+        clientSideDecorations: app.clientSideDecorations
+
+	    onSelectedTabChanged: pageStack.currentPage.selectedTab = selectedTab
     }
 
     PageStack {
