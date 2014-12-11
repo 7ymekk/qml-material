@@ -16,6 +16,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 import QtQuick 2.0
+import QtQuick.Window 2.2
 
 View {
     width: units.dp(320)
@@ -23,6 +24,8 @@ View {
 
     objectName: "navDrawer"
     z: 15
+
+    clipContent: false
 
     anchors {
         left: parent.left
@@ -47,5 +50,31 @@ View {
 
     function close() {
         showing = false
+    }
+
+    Rectangle {
+        id: overlay
+
+        x: - Screen.height
+        y: - Screen.width
+        height: Screen.height * 3
+        width: Screen.width * 3
+
+        color: "black"
+        opacity: showing ? 0.4 : 0
+
+        z: -1
+
+        MouseArea {
+            enabled: showing
+            anchors.fill: parent
+            hoverEnabled: true
+
+            onClicked: { close() }
+        }
+
+        Behavior on opacity{
+            NumberAnimation { duration: 200 }
+        }
     }
 }
