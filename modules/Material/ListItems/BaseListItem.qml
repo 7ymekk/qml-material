@@ -29,5 +29,5 @@ View {
         anchors.fill: parent
     }
 
-    tintColor: ink.containsMouse ? Qt.rgba(0,0,0,0.05) : Qt.rgba(0,0,0,0)
+    tintColor: ink.containsMouse && ink.pressed ? Qt.rgba(0,0,0,0.05) : Qt.rgba(0,0,0,0)
 }

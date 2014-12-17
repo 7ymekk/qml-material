@@ -66,7 +66,7 @@ Image {
 
     property string color: "grey600"
 
-    mipmap: true
+    mipmap: true //results in black squares instead of icon on iPad2 and iOS7.1
 
     AwesomeIcon {
         anchors.centerIn: parent

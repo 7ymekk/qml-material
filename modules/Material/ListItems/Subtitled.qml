@@ -16,7 +16,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 import QtQuick 2.0
-import ".."
+import Material 0.1
 
 BaseListItem {
     id: listItem
@@ -30,6 +30,8 @@ BaseListItem {
 
     property alias action: actionItem.children
     property alias secondaryItem: secondaryItem.children
+
+    property alias actionItemSize: actionItem.width
 
     Item {
         id: actionItem
@@ -68,10 +70,9 @@ BaseListItem {
 
                 font.capitalization: Font.Capitalize
 
-                width: parent.width
 //property loop
-//                width: valueLabel.text || secondaryItem.children.length > 0
-//                       ? Math.min(implicitWidth, parent.width * 0.8) : parent.width
+                width: valueLabel.text || secondaryItem.children.length > 0
+                       ? Math.min(implicitWidth, parent.width * 0.8) : parent.width
             }
 
             Label {

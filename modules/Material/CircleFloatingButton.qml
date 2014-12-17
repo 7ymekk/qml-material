@@ -10,7 +10,7 @@ View
     height: units.dp(56)
     width: height
 
-    elevation: mouseArea.containsMouse ? 3 : 2
+    elevation: mouseArea.containsMouse && mouseArea.pressed ? 2 : 1
     radius: width / 2
 
     clip: false
@@ -26,7 +26,7 @@ View
     {
         id: icon
 
-//        color: "white"
+        color: "black"
         anchors.centerIn: parent
 
         height: parent.height * 2 / 3
