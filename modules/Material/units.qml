@@ -71,6 +71,8 @@ Object {
        this anywhere you need to refer to distances on the screen.
      */
     function dp(number) {
+        if (__pixelDensity > 14)
+            __pixelDensity = __pixelDensity * 0.9;
         return number * __pixelDensity * 1.4 * 0.15875
     }
 }

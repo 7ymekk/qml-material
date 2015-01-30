@@ -26,7 +26,7 @@ MouseArea {
     z: 2
 
     property int startSize: width/3
-    property int endSize: width - 10
+    property int endSize: width*2//width - 10
 
     property Item currentCircle
     property color color: Qt.rgba(0,0,0,0.1)

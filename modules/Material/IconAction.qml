@@ -49,5 +49,9 @@ Icon {
             //ink.focused = true
             icon.triggered()
         }
+
+        onDoubleClicked:
+        {
+        }
     }
 }

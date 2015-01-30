@@ -88,7 +88,7 @@ Text {
         }
     }
 
-    property bool desktop: true
+    property bool desktop: Device.formFactor == "desktop"
 
     property var fontInfo: fontStyles[style]
 

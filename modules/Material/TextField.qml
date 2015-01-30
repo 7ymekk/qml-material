@@ -31,6 +31,20 @@ Item {
 	width: units.dp(200)
 	
 	property bool empty: field.text == ""
+
+    property alias fieldFocus: field.focus
+    property alias fieldActiveFocus: field.activeFocus
+    property alias fieldInputMethodHints: field.inputMethodHints
+    property alias validator: field.validator
+    property alias inputMask: field.inputMask
+
+    signal returnPressed();
+
+
+    function selectAll()
+    {
+        field.selectAll()
+    }
 	
 	TextInput {
 		id: field
@@ -40,6 +54,18 @@ Item {
 		
 		color: Theme.light.textColor
 		font.family: "Roboto"
+
+        selectionColor: Theme.primaryColor
+
+        Keys.onReturnPressed:
+        {
+            textField.returnPressed();
+        }
+
+        Keys.onEnterPressed:
+        {
+            textField.returnPressed();
+        }
 	}
 
 	Label {

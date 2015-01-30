@@ -16,7 +16,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 import QtQuick 2.0
-import Material.Extras 0.1
+import Extras 0.1
 
 Item {
     id: pageStack
@@ -63,6 +63,7 @@ Item {
         if (stack.length == 0)
             page.showBackButton = false
 
+        page.focus = true
         currentPage = page
 
         if (page.transition)
@@ -90,7 +91,9 @@ Item {
 
         pagePopped(stack[stack.length - 1], currentPage)
 
-        currentPage = stack.pop()
+        var page = stack.pop();
+        page.focus = true
+        currentPage = page
         stack = stack
     }
 

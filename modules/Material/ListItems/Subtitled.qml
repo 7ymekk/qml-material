@@ -68,8 +68,6 @@ BaseListItem {
                 elide: Text.ElideRight
                 style: "subheading"
 
-                font.capitalization: Font.Capitalize
-
 //property loop
                 width: valueLabel.text || secondaryItem.children.length > 0
                        ? Math.min(implicitWidth, parent.width * 0.8) : parent.width

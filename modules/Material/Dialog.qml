@@ -27,6 +27,12 @@ View {
     elevation: 5
 
     property string title
+
+    MouseArea
+    {
+        anchors.fill: parent
+    }
+
     property alias dialogContent: contentItem.data
 
     z: 99999999

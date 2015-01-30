@@ -28,6 +28,8 @@ Item {
 
     default property alias content: transView.children
 
+    property bool isRunning: animationTo.running || animationBack.running
+
     property Item page
 
     Rectangle {

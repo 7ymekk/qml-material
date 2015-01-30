@@ -193,12 +193,10 @@ View {
 
         anchors {
             left: parent.left
-            right: windowControls.left
+            right: clientSideDecorations ? windowControls.left : parent.right
             rightMargin: clientSideDecorations ? units.dp(8) : 0
         }
         height: toolbar.implicitHeight
-
-
     }
 
     Row {

@@ -5,7 +5,7 @@ import ListItems 0.1
 Dialog
 {
     id: dialog
-    property var value: null
+    property var value: ""
 
     /**
       choices - json object array
@@ -49,7 +49,8 @@ Dialog
 
             onTriggered:
             {
-                dialog.value = value
+                print("=====" + model.value)
+                dialog.value = model.value
                 listView.currentIndex = index
             }
 
